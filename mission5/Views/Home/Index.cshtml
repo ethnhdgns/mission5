@@ -1,0 +1,129 @@
+﻿@{
+    ViewData["Title"] = "Basketball Training - Unlock Your Full Potential";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/mission5.styles.css" asp-append-version="true" />
+    <link rel="icon" type="image/x-icon" href="~/images/1024.jpeg" />
+    <style>
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 15px;
+        }
+
+        .testimonial-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+        .testimonial {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .testimonial img {
+            border-radius: 10px; /* Less rounded corners */
+            width: 350px; /* Larger images */
+            height: 350px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+        }
+        .cta-section {
+            background-color: #bcd0c7; /* Previous color restored */
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 1.2rem;
+        }
+        .programs-list h3 {
+            margin-top: 40px;
+        }
+        .programs-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .programs-list ul li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <main role="main">
+        <section id="welcome">
+            <h2>Welcome to Basketball Training with Coach Hunter</h2>
+            <p>For the past 18 years, Hunter has coached players of all levels to improve their shooting, through a series of systematic drills & skill progressions.
+                His skills in developing shooters have brought him to the NBA where he continues to work with some of the greatest players in the league.
+                Hunter has been featured in:
+                NBA.com, Sports Illustrated, Bleacher Report, ESPN, SBNATION, and The Guardian for his unique and noteworthy ability to improve a player’s shooting ability.</p>
+        </section>
+
+        <section id="programs" class="programs-list">
+            <h2>Our Training Programs</h2>
+            <h3>Skill Development</h3>
+            <ul>
+                <li><strong>Ball Handling:</strong> Master dribbling techniques and control.</li>
+                <li><strong>Shooting:</strong> Improve consistency and precision.</li>
+                <li><strong>Passing:</strong> Develop quick, accurate passes.</li>
+                <li><strong>Defense:</strong> Learn defensive positioning and footwork.</li>
+            </ul>
+
+            <h3>Position-Specific Training</h3>
+            <ul>
+                <li><strong>Point Guard:</strong> Leadership and vision.</li>
+                <li><strong>Shooting Guard/Small Forward:</strong> Scoring and perimeter shooting.</li>
+                <li><strong>Power Forward/Center:</strong> Post moves and rebounding.</li>
+            </ul>
+        </section>
+
+        <section id="testimonials" class="testimonial-section">
+            <h2>What Our Players Say</h2>
+            <div class="testimonial">
+                <img src="~/images/chris-brickley-1.webp" alt="Lebron James" />
+                <p><em>"The personalized drills helped me improve my shooting range and ball handling, and I’ve seen major improvements in my basketball IQ!" — Lebron James, College Basketball Player</em></p>
+            </div>
+            <div class="testimonial">
+                <img src="~/images/trainer.jpeg" alt="Carmelo Anthony" />
+                <p><em>"The coaching staff breaks down my game and gives me specific drills to improve my weaknesses. Now I’m scoring higher than ever!" — Carmelo Anthony, Recreational Basketball Player</em></p>
+            </div>
+        </section>
+
+        <section id="cta" class="cta-section">
+            <h2>Ready to Elevate Your Game?</h2>
+            <p>Sign up for a session or contact us to learn more about our programs. Start your journey to becoming a better player today!</p>
+        </section>
+    </main>
+</div>
+
+<!-- Footer matching the calculator page -->
+<footer>
+    <p>&copy; 2025 [Your Brand Name] Basketball Training. All rights reserved.</p>
+</footer>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
