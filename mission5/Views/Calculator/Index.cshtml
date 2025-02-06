@@ -3,42 +3,113 @@
 }
 
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
+<html lang="en">
+<head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-    <h1>Training Cost Calculator</h1>
-
-    <label for="hours">Enter Number of Hours:</label>
-    <input type="number" id="hours" min="1">
-    <span id="error-message" style="color: red; display: none;">Please enter a valid positive number</span>
-
-    <p>Rate per Hour: <input type="text" id="rate" value="50" readonly></p>
-
-    <button id="calculate">Calculate Total</button>
-
-    <p>Total Cost: <span id="total-cost">$0</span></p>
-
-    <script>
-    $(document).ready(function(){
-    $("#calculate").click(function(){
-        let hours = $("#hours").val();
-        let rate = $("#rate").val();
-
-        if (hours <= 0 || isNaN(hours)) {
-            $("#error-message").show();
-            return;
-        } else {
-            $("#error-message").hide();
+    <style>
+        /* General page styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
 
-        let total = hours * rate;
+        /* The header should not be affected */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 15px;
+        }
+
+        /* Container for the calculator centered */
+        .calculator-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 100px); /* Adjust to account for the header height */
+        }
+
+        /* Module container styling */
+        .calculator-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        /* Input and label styling */
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #error-message {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator-wrapper">
+    <div class="calculator-container">
+        <h1>Training Cost Calculator</h1>
+
+        <label for="hours">Enter Number of Hours:</label>
+        <input type="number" id="hours" min="1">
+        <span id="error-message">Please enter a valid positive number</span>
+
+        <p>Rate per Hour: <input type="text" id="rate" value="372" readonly></p>
+
+        <button id="calculate">Calculate Total</button>
+
+        <p>Total Cost: <span id="total-cost">$0</span></p>
+
+        <a asp-controller="Home" asp-action="Index">Back to Home</a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#calculate").click(function(){
+            let hours = $("#hours").val();
+            let rate = $("#rate").val();
+
+            if (hours <= 0 || isNaN(hours)) {
+                $("#error-message").show();
+                return;
+            } else {
+                $("#error-message").hide();
+            }
+
+            let total = hours * rate;
             $("#total-cost").text(`$${total}`);
+        });
     });
-});
 </script>
 
-    <a asp-controller="Home" asp-action="Index">Back to Home</a>
-    </body>
-    </html>
+</body>
+</html>
